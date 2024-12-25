@@ -54,15 +54,9 @@ int estOperateur(char c){
     return (c=='+' || c=='-' || c=='*' || c=='/'); 
 
 }
-pile* consp(char EA[],int len){
+void consp(int len){
 
-    pile* p=(pile*) malloc(sizeof(pile));
     
-    for(int i=0;i<len;i++){
-        if(EA[i] != '(' && !estOperateur(EA[i]) && EA[i] != ")"){
-            empiler(EA[i],p);   
-        }
-    }
 
     
 
