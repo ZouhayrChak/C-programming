@@ -19,14 +19,14 @@ noeud_t* instancier(int don, noeud_t* gauche, noeud_t* droite){
     return nouveau;
 }
 
-void Inserer_ARB(noeud_t* R, int don){
+void Inserer_ARB(noeud_t** R, int don){
     
-    if(!R){
-        R = instancier(don,NULL,NULL);
-    }else if(don<=R->elt){
-        Inserer_ARB(R->G,don);
+    if(!(*R)){
+        *R = instancier(don,NULL,NULL);
+    }else if(don<=(*R)->elt){
+        Inserer_ARB(&((*R)->G),don);
     }else{
-        Inserer_ARB(R->D,don);
+        Inserer_ARB(&((*R)->D),don);
     }
 
 
